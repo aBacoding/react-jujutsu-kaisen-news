@@ -32,13 +32,13 @@ const Navbar: React.FC = () => {
 		>
 			<div className='container'>
 				{!isMobileMenuOpen && (
-					<a
-						href='/'
+					<Link
+						to='/'
 						className='navbar__logo'
 						onContextMenu={e => e.preventDefault()}
 					>
 						<img src='./images/logo.png' alt='Logo' draggable='false' />
-					</a>
+					</Link>
 				)}
 				<nav className={`${isMobileMenuOpen ? 'mobile-nav' : ''}`}>
 					<ul className='navbar__links'>

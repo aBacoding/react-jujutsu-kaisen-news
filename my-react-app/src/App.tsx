@@ -1,11 +1,21 @@
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
+import NotFoundPage from './pages/404'
 
 function App() {
 	return (
-		<div className='App'>
-			<Navbar />
-		</div>
+		<Router>
+			<div className='App'>
+				<Navbar />
+				<Routes>
+					{/* <Route path='/' element={<HomePage />} /> */}
+					{/* other routes will be here */}
+					<Route path='*' element={<NotFoundPage />} />
+				</Routes>
+			</div>
+		</Router>
 	)
 }
 

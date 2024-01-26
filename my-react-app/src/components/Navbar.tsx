@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar: React.FC = () => {
 	const [isAnimePopupOpen, setIsAnimePopupOpen] = useState(false)
@@ -42,9 +43,9 @@ const Navbar: React.FC = () => {
 				<nav className={`${isMobileMenuOpen ? 'mobile-nav' : ''}`}>
 					<ul className='navbar__links'>
 						<li>
-							<a href='/' className='nav-link'>
+							<Link to='/' className='nav-link'>
 								Home
-							</a>
+							</Link>
 						</li>
 						<li onClick={toggleAnimePopup}>
 							<span className='nav-link'>
@@ -57,24 +58,24 @@ const Navbar: React.FC = () => {
 								>
 									<ul>
 										<li>
-											<a href='/' className='popup-link'>
+											<Link to='/episodes' className='popup-link'>
 												Episodes
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a href='/' className='popup-link'>
+											<Link to='/anime-characters' className='popup-link'>
 												Characters
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a href='/' className='popup-link'>
+											<Link to='/openings' className='popup-link'>
 												Openings
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a href='/' className='popup-link'>
+											<Link to='/endings' className='popup-link'>
 												Endings
-											</a>
+											</Link>
 										</li>
 									</ul>
 								</div>
@@ -91,33 +92,33 @@ const Navbar: React.FC = () => {
 								>
 									<ul>
 										<li>
-											<a href='/' className='popup-link'>
+											<Link to='/chapters' className='popup-link'>
 												Chapters
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a href='/' className='popup-link'>
+											<Link to='/manga-characters' className='popup-link'>
 												Characters
-											</a>
+											</Link>
 										</li>
 									</ul>
 								</div>
 							)}
 						</li>
 						<li>
-							<a href='/' className='nav-link'>
-								Movie
-							</a>
+							<Link to='/movies' className='nav-link'>
+								Movies
+							</Link>
 						</li>
 						<li>
-							<a href='/' className='nav-link'>
+							<Link to='/news' className='nav-link'>
 								News
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href='/' className='nav-link'>
+							<Link to='/staff' className='nav-link'>
 								Staff/Cast
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>

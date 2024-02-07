@@ -10,6 +10,12 @@ const Navbar: React.FC = () => {
 	const toggleMangaPopup = () => setIsMangaPopupOpen(!isMangaPopupOpen)
 	const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
 
+	const handleLinkClick = () => {
+		if (isMobileMenuOpen) {
+			setIsMobileMenuOpen(false)
+		}
+	}
+
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth > 1024) {
@@ -20,8 +26,6 @@ const Navbar: React.FC = () => {
 		}
 
 		window.addEventListener('resize', handleResize)
-
-		handleResize()
 
 		return () => window.removeEventListener('resize', handleResize)
 	}, [])
@@ -42,7 +46,7 @@ const Navbar: React.FC = () => {
 				)}
 				<nav className={`${isMobileMenuOpen ? 'mobile-nav' : ''}`}>
 					<ul className='navbar__links'>
-						<li>
+						<li onClick={handleLinkClick}>
 							<Link to='/' className='nav-link'>
 								Home
 							</Link>
@@ -57,22 +61,22 @@ const Navbar: React.FC = () => {
 									onMouseLeave={() => setIsAnimePopupOpen(false)}
 								>
 									<ul>
-										<li>
+										<li onClick={handleLinkClick}>
 											<Link to='/episodes' className='popup-link'>
 												Episodes
 											</Link>
 										</li>
-										<li>
+										<li onClick={handleLinkClick}>
 											<Link to='/anime-characters' className='popup-link'>
 												Characters
 											</Link>
 										</li>
-										<li>
+										<li onClick={handleLinkClick}>
 											<Link to='/openings' className='popup-link'>
 												Openings
 											</Link>
 										</li>
-										<li>
+										<li onClick={handleLinkClick}>
 											<Link to='/endings' className='popup-link'>
 												Endings
 											</Link>
@@ -91,12 +95,12 @@ const Navbar: React.FC = () => {
 									onMouseLeave={() => setIsMangaPopupOpen(false)}
 								>
 									<ul>
-										<li>
+										<li onClick={handleLinkClick}>
 											<Link to='/chapters' className='popup-link'>
 												Chapters
 											</Link>
 										</li>
-										<li>
+										<li onClick={handleLinkClick}>
 											<Link to='/manga-characters' className='popup-link'>
 												Characters
 											</Link>
@@ -105,17 +109,17 @@ const Navbar: React.FC = () => {
 								</div>
 							)}
 						</li>
-						<li>
+						<li onClick={handleLinkClick}>
 							<Link to='/movies' className='nav-link'>
 								Movies
 							</Link>
 						</li>
-						<li>
+						<li onClick={handleLinkClick}>
 							<Link to='/news' className='nav-link'>
 								News
 							</Link>
 						</li>
-						<li>
+						<li onClick={handleLinkClick}>
 							<Link to='/staff' className='nav-link'>
 								Staff/Cast
 							</Link>

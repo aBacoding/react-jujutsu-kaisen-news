@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 
-const NotFoundPage: React.FC = () => {
+const NotFoundPage: React.FC<{ isMobileMenuOpen: boolean }> = ({
+	isMobileMenuOpen,
+}) => {
 	useEffect(() => {
 		document.body.classList.add('not-found-body')
 
@@ -11,6 +13,10 @@ const NotFoundPage: React.FC = () => {
 			document.body.classList.remove('not-found-body')
 		}
 	}, [])
+
+	if (isMobileMenuOpen) {
+		return null
+	}
 
 	return (
 		<div className='container not-found-container'>

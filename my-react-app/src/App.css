@@ -4,6 +4,13 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+	font-family: 'jjk';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../public/fonts/JujutsuKaisen.woff') format('woff');
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	color: #000;
@@ -352,3 +359,37 @@ html {
 .not-found-body .navbar {
 	background: transparent;
 } */
+
+.home__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.home__content {
+	max-width: 50%;
+}
+
+.home__content h1 {
+	font-size: 6rem;
+	font-family: 'jjk', sans-serif;
+	margin-bottom: 20px;
+}
+
+.home__content p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	margin-bottom: 30px;
+}
+
+.image__container {
+	max-width: 45%;
+	text-align: right;
+}
+
+.sukuna__img {
+	max-width: 85%;
+	height: auto;
+	filter: drop-shadow(0 0 6px #000000);
+}

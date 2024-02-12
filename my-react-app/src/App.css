@@ -367,11 +367,12 @@ html {
 }
 
 .home__content {
-	max-width: 50%;
+	flex: 1 1 60%;
+	padding: 20px;
 }
 
 .home__content h1 {
-	font-size: 6rem;
+	font-size: 6.2rem;
 	font-family: 'jjk', sans-serif;
 	margin-bottom: 20px;
 }
@@ -384,12 +385,45 @@ html {
 }
 
 .image__container {
-	max-width: 45%;
+	flex: 1 1 40%;
 	text-align: right;
 }
 
 .sukuna__img {
-	max-width: 85%;
+	max-width: 90%;
 	height: auto;
-	filter: drop-shadow(0 0 6px #000000);
+	filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+
+@media (max-width: 1024px) {
+	.home__content h1 {
+		font-size: 4rem; /* Smaller font size for smaller screens */
+	}
+	.home__content p {
+		font-size: 1rem; /* Adjust paragraph font size */
+	}
+}
+
+@media (max-width: 1024px) {
+	.home__container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.home__content {
+		max-width: 100%;
+		text-align: center;
+	}
+
+	.home__content h1 {
+		font-size: 4.5rem;
+	}
+
+	.home__content p {
+		font-size: 1rem;
+	}
+
+	.image__container {
+		display: none;
+	}
 }
